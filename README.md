@@ -1,4 +1,4 @@
-# grunt-hockeyapp-upload
+# grunt-hockeyapp-upload (EXPERIMENTAL)
 
 > Grunt plugin for uploading apps via the hockeyapp rest api.
 
@@ -20,7 +20,7 @@ grunt.loadNpmTasks('grunt-hockeyapp-upload');
 ## The "hockeyapp" task
 
 ### Overview
-In your project's Gruntfile, add a section named `hockeyapp_upload` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `hockeyapp` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
