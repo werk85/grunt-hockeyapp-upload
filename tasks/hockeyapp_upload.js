@@ -141,7 +141,7 @@ module.exports = function(grunt) {
         grunt.log.error(err);
         return done(false);
       }
-      if (res.statusCode !== 200) {
+      if (res.statusCode !== 200 && res.statusCode !== 201) {
         grunt.log.error('Uploading failed with status ' + res.statusCode);
         res.on('data', function (chunk) {
           grunt.log.write(chunk);
