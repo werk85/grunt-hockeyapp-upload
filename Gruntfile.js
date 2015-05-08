@@ -8,8 +8,10 @@
 
 'use strict';
 
-module.exports = function(grunt) {
 
+module.exports = function(grunt) {
+  var file = grunt.option('file');
+  var token = grunt.option('token');
   // Project configuration.
   grunt.initConfig({
     jshint: {
@@ -29,22 +31,12 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    hockeyapp_upload: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+    hockeyapp: {
+      options: {
+        token: token
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+      ios: {
+        file: file
       }
     },
 
@@ -65,7 +57,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'hockeyapp_upload', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'hockeyapp', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

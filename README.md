@@ -26,6 +26,7 @@ In your project's Gruntfile, add a section named `hockeyapp_upload` to the data 
 grunt.initConfig({
   hockeyapp: {
     options: {
+      resource: '1234567890abcdef1234567890abcdef/app_versions/1',
       token: 'MY_HOCKEYAPP_TOKEN'
     },
     ios: {
@@ -45,6 +46,16 @@ grunt.initConfig({
 ```
 
 ### Options
+
+#### options.resource
+Type `String`
+Required
+
+The resource you want to update via the API call:
+
+ * `upload`: Upload an .ipa, .apk, or .zip file to create a new app. If an app with the same bundle identifier or package name and the same release type already exists, the uploaded file is assigned to this existing app.
+ * `APP_ID/app_versions/upload`: Upload an .ipa, .apk, or .zip file to create a new version for your app.
+ * `APP_ID/app_versions/ID`: Update the attributes of an existing version and replace an existing version.
 
 #### options.token
 Type `String`
