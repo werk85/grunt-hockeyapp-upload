@@ -1,4 +1,4 @@
-# grunt-hockeyapp-upload (EXPERIMENTAL)
+# grunt-hockeyapp-upload
 
 > Grunt plugin for uploading apps via the hockeyapp rest api.
 
@@ -31,7 +31,7 @@ grunt.initConfig({
     },
     ios: {
       options: {
-        notify: true
+        notify: 'testers'
       },
       file: 'app.ipa',
       mapping: 'app.dSYM.zip'
