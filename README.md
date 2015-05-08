@@ -1,4 +1,4 @@
-# grunt-hockeyapp-upload
+# grunt-hockeyapp-upload (EXPERIMENTAL)
 
 > Grunt plugin for uploading apps via the hockeyapp rest api.
 
@@ -20,7 +20,7 @@ grunt.loadNpmTasks('grunt-hockeyapp-upload');
 ## The "hockeyapp" task
 
 ### Overview
-In your project's Gruntfile, add a section named `hockeyapp_upload` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `hockeyapp` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
@@ -33,7 +33,6 @@ grunt.initConfig({
       options: {
         notify: true
       },
-      // Target-specific file lists and/or options go here.
       file: 'app.ipa',
       mapping: 'app.dSYM.zip'
     },
@@ -81,12 +80,11 @@ Release notes as Textile or Markdown
 
 #### options.notesType
 Type `String`
-Optional, 
-
+Optional
 
 Available values:
- * 'textile' for Textile
- * 'markdown' for Markdown
+ * `'textile'` for Textile
+ * `'markdown'` for Markdown
 
 Type of release notes
 
@@ -95,15 +93,13 @@ Type `Boolean`
 Optional
 
 Available values:
- * 'testers' for all testers
- * 'testers can install' for all testers that can install this app
- * 'all' notify all testers
+ * `'testers'` for all testers
+ * `'testers can install'` for all testers that can install this app
+ * `'all'` notify all testers
 
 Notify testers (can only be set with full-access tokens)
 
-
-
-#### options.tags - optional, 
+#### options.tags
 Type `String` or `Array<String>`
 Optional
 
@@ -115,7 +111,7 @@ Optional
 
 Restrict download to comma-separated list of team IDs
 
-#### options.users - 
+#### options.users
 Type `String` or `Array<String>`
 Optional
 
@@ -138,7 +134,7 @@ Optional
 
 Available values:
 
- * `aplha`
+ * `aplpha`
  * `beta`
  * `store`
  * `enterprise`
