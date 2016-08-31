@@ -134,7 +134,7 @@ Optional
 
 Available values:
 
- * `aplpha`
+ * `alpha`
  * `beta`
  * `store`
  * `enterprise`
